@@ -1,0 +1,16 @@
+{% comment %}
+You can do it with some code changes
+Please go to Online Store > Themes > Actions > Edit Code > Snippets > price.liquid
+Find this line of code
+{% endcomment %}
+
+assign money_price = 'products.product.price.from_price_html' | t: price: money_price
+
+{% comment %}
+Instead of deleting this line, we will change the variable name money_price to money_price2
+Now add a new line of code under that
+
+note: if you don't want to add "/lb" aftre currency just leave it blank ""
+{% endcomment %}
+
+assign money_price = price | money_with_currency | append: "/lb"
